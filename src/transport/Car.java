@@ -11,9 +11,9 @@ public class Car {
     private final int year;
     private final String country;
     private String transmiss;
-    private final String carcass;
+    private  String carcass;
     private int numberReg;
-    private final int numbSeat;
+    private  int numbSeat;
     private boolean sumRubber;
 
     int month = 4;
@@ -21,12 +21,22 @@ public class Car {
 
     public static class Key {
 
-        private final Boolean distanceKeyEngine = true;
-        private final Boolean keylessAccess = true;
+        private Boolean isKeyInCar;
+        private  Boolean distanceKeyEngine ;
+        private  Boolean keylessAccess ;
 
+        public void whereKey(Boolean isKeyInCar){
+
+            if (isKeyInCar == true) {
+                System.out.println("Ключ в машине");
+            }else{
+                System.out.println("Ключ нужно вставить в машину");
+            }
+        }
         public Key(Boolean distanceKeyEngine, Boolean keylessAccess) {
-            this.distanceKeyEngine=valBool(distanceKeyEngine);
-            this.keylessAccess=valBool(keylessAccess);
+
+            this.distanceKeyEngine = valBool(distanceKeyEngine);
+            this.keylessAccess = valBool(keylessAccess);
 
         }
     }
