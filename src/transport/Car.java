@@ -16,6 +16,8 @@ public class Car {
     private  int numbSeat;
     private boolean sumRubber;
 
+    private Key key;
+
     int month = 4;
 
 
@@ -41,7 +43,7 @@ public class Car {
         }
     }
 
-    public Car(String brand, String model, double engineVolume, String color, int year, String country) {
+    public Car(String brand, String model, double engineVolume, String color, int year, String country,Key key) {
         this.brand = validateParam(brand);
         this.model = validateParam(model);
         this.engineVolume = validateEngineVolume(engineVolume);
@@ -52,6 +54,8 @@ public class Car {
         this.carcass = validateParam(carcass);
         this.numberReg = valNumberReg(numberReg);
         this.numbSeat = valNumbSeat(numbSeat);
+        this.key=key;
+
     }
 
     public void changeRub(boolean sumRubber) {
@@ -76,7 +80,7 @@ public class Car {
     }
 
     public static String valColor(String value) {
-        return Validation.validateString(value, "default");
+        return validateString(value, "default");
     }
 
     public static Integer valNumberReg(Integer value) {
