@@ -43,7 +43,7 @@ public class Car {
         }
     }
 
-    public Car(String brand, String model, double engineVolume, String color, int year, String country,Key key) {
+    public Car(String brand, String model, double engineVolume, String color, int year, String country,String transmiss,String carcass,int numberReg,int numbSeat,Key key) {
         this.brand = validateParam(brand);
         this.model = validateParam(model);
         this.engineVolume = validateEngineVolume(engineVolume);
