@@ -1,33 +1,23 @@
 package transport;
 
-public class Transport {
+public abstract class Transport  {
 
-    private  String brand;
+    private String brand;
+    private String model;
+    private double engineVolume;
 
-    private  String model;
-
-    private int maxSpeed;
-
-    private String color;
-
-    private final int year;
-
-    private final  String country;
-
-    public Transport(String brand, String model, int maxSpeed, String color, int year, String country) {
+    public Transport(String brand, String model, double engineVolume) {
         this.brand = brand;
         this.model = model;
-        this.maxSpeed = maxSpeed;
-        this.color = color;
-        this.year = year;
-        this.country = country;
+        this.engineVolume = engineVolume;
+
     }
 
-    public static String validateParam(String value) {
-        return Validation.validateString(value, "default");
+    public void startDrive(){
+        System.out.println("Начать движение");
     }
-    public static int valInt(Integer value) {
-        return value == null || value < 0 ? 0 : value;
+    public void finishDrive(){
+        System.out.println("Закончить движение");
     }
 
     public String getBrand() {
@@ -45,30 +35,4 @@ public class Transport {
     public void setModel(String model) {
         this.model = model;
     }
-
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        this.maxSpeed = valInt(maxSpeed);
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = validateParam(color);
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-
 }
