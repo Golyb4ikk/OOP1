@@ -36,6 +36,9 @@ public class Main  {
         DriverB man2= new DriverB("G.A.D",true,14);
         man2.getInfo(audi1);
 
+        audi1.printType();
+        tracktor1.printType();
+
 
     }
 
