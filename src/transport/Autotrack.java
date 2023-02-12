@@ -39,4 +39,9 @@ public class Autotrack extends Transport implements Competative{
             System.out.println(getType());
         }
     }
+
+    @Override
+    public boolean isDiagPass() throws TransportTimeException {
+        return super.isDiagPass();
+    }
 }

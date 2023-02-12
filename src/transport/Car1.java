@@ -52,4 +52,9 @@ public class Car1 extends Transport implements Competative   {
             System.out.println(getType());
         }
     }
+
+    @Override
+    public boolean isDiagPass() throws TransportTimeException {
+        return super.isDiagPass();
+    }
 }
