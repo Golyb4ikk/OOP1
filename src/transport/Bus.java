@@ -3,8 +3,10 @@ package transport;
 public class Bus extends Transport implements Competative{
 
     Type type = Type.BUS;
-    public Bus(String brand, String model, double engineVolume) {
+    Capacity capacity=Capacity.BIG;
+    public Bus(String brand, String model, double engineVolume,Capacity capacity) {
         super(brand, model, engineVolume);
+        this.capacity=capacity;
     }
 
     @Override

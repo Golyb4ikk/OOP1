@@ -3,8 +3,12 @@ package transport;
 public class Autotrack extends Transport implements Competative{
 
     Type type=Type.AUTOTRACK;
-    public Autotrack(String brand, String model, double engineVolume) {
+    WeightUp weightUp=WeightUp.N3;
+    public Autotrack(String brand, String model, double engineVolume,WeightUp weightUp) {
+
         super(brand, model, engineVolume);
+        this.weightUp=weightUp;
+
     }
 
     @Override

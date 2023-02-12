@@ -3,10 +3,19 @@ package transport;
 public class Car1 extends Transport implements Competative   {
 
     Type type=Type.CAR1;
-    public Car1(String brand, String model, double engineVolume) {
+    Carcase carcase=Carcase.SEDAN;
+    public Car1(String brand, String model, double engineVolume,Carcase carcase) {
         super(brand, model, engineVolume);
+        this.carcase=carcase;
     }
 
+    public Carcase getCarcase() {
+        return carcase;
+    }
+
+    public void setCarcase(Carcase carcase) {
+        this.carcase = carcase;
+    }
 
     @Override
     public void pitStop() {
