@@ -1,0 +1,5 @@
+package transport;
+
+public enum Carcase {
+    SEDAN,HATCHBACK,CUPE,UNIVERSAL,VNEDODRSHNIC,CROSSOVER,PIKAP,FURGON,MINIVAN;
+}
