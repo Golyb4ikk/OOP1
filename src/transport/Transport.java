@@ -4,6 +4,8 @@ public abstract class Transport {
 
     private String brand;
     private String model;
+    private boolean isDiagPass;
+
     private double engineVolume;
 
     private Type type;
@@ -43,4 +45,8 @@ public abstract class Transport {
     public abstract Type getType();
 
     public abstract void printType();
+
+    public boolean isDiagPass() throws TransportTimeException {
+        return isDiagPass;
+    }
 }

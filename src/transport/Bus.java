@@ -40,4 +40,9 @@ public class Bus extends Transport implements Competative{
             System.out.println(getType());
         }
     }
+
+    @Override
+    public boolean isDiagPass() throws TransportTimeException {
+        throw new TransportTimeException("Автобусы не проходят");
+    }
 }

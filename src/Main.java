@@ -44,6 +44,10 @@ public class Main  {
         audi1.printType();
         tracktor1.printType();
 
+        audi1.isDiagPass();
+        tracktor1.isDiagPass();
+        bmw1.isDiagPass();
+
 
     }
 
