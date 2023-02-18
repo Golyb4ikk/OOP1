@@ -1,12 +1,15 @@
 package transport;
 
+import java.util.List;
+
 public class Bus extends Transport implements Competative{
 
     Type type = Type.BUS;
     Capacity capacity=Capacity.BIG;
-    public Bus(String brand, String model, double engineVolume,Capacity capacity) {
-        super(brand, model, engineVolume);
-        this.capacity=capacity;
+
+    public Bus(String brand, String model, double engineVolume, List<Mechanic> mechanicList, Capacity capacity) {
+        super(brand, model, engineVolume, mechanicList);
+        this.capacity = capacity;
     }
 
     @Override
@@ -44,5 +47,15 @@ public class Bus extends Transport implements Competative{
     @Override
     public boolean isDiagPass() throws TransportTimeException {
         throw new TransportTimeException("Автобусы не проходят");
+    }
+
+    @Override
+    public String repair() {
+        return "Автобус отремонтирован";
+    }
+
+    @Override
+    public String maintance() {
+        return "Автобус прошел проверку,";
     }
 }

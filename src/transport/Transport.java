@@ -1,5 +1,7 @@
 package transport;
 
+import java.util.List;
+
 public abstract class Transport {
 
     private String brand;
@@ -10,12 +12,21 @@ public abstract class Transport {
 
     private Type type;
 
-    public Transport(String brand, String model, double engineVolume) {
+    private List<Mechanic>mechanicList;
+
+    public Transport(String brand, String model, double engineVolume, List<Mechanic>mechanicList) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
+        this.mechanicList=mechanicList;
+    }
 
+    public List<Mechanic> getMechanicList() {
+        return mechanicList;
+    }
 
+    public void setMechanicList(List<Mechanic> mechanicList) {
+        this.mechanicList = mechanicList;
     }
 
     public void startDrive() {
@@ -48,5 +59,16 @@ public abstract class Transport {
 
     public boolean isDiagPass() throws TransportTimeException {
         return isDiagPass;
+    }
+    public abstract String repair();
+    public abstract String maintance();
+
+    public boolean checkTrans(){
+        try{
+            isDiagPass();
+        }catch (TransportTimeException e){
+            return false;
+        }
+        return true;
     }
 }
