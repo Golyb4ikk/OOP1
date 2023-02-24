@@ -1,9 +1,6 @@
 import transport.*;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 import static transport.Capacity.*;
 import static transport.Carcase.*;
@@ -43,9 +40,9 @@ public class Main {
         machine.add(tracktor2);
         machine.add(tracktor3);
 
-        Queue<Transport>transportsOnSTO=new ArrayDeque<>();
-        ServiceCentre sto=new ServiceCentre(transportsOnSTO);
-        for(Transport transport:machine){
+        Queue<Transport> transportsOnSTO = new ArrayDeque<>();
+        ServiceCentre sto = new ServiceCentre(transportsOnSTO);
+        for (Transport transport : machine) {
             sto.addTrans(transport);
         }
         for (int j = 0; j < transportsOnSTO.size(); j++) {
@@ -79,9 +76,15 @@ public class Main {
         Alex3.repairCar(tracktor1);
         Ivan.doMaintenance(audi1);
 
+        Map<Transport,List<Mechanic>>trAndMech=new HashMap<>();
 
+        trAndMech.put(audi1,audi1.getMechanicList());
+        trAndMech.put(bmw,bmw.getMechanicList());
+        trAndMech.put(tracktor3,tracktor3.getMechanicList());
 
-
+        for (Map.Entry<Transport,List<Mechanic>> map:trAndMech.entrySet()){
+            System.out.println(map);
+        }
 
     }
 
