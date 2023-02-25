@@ -1,14 +1,15 @@
 package transport;
 
+import java.util.List;
+
 public class Autotrack extends Transport implements Competative{
 
     Type type=Type.AUTOTRACK;
     WeightUp weightUp=WeightUp.N3;
-    public Autotrack(String brand, String model, double engineVolume,WeightUp weightUp) {
 
-        super(brand, model, engineVolume);
-        this.weightUp=weightUp;
-
+    public Autotrack(String brand, String model, double engineVolume, List<Mechanic> mechanicList, WeightUp weightUp) {
+        super(brand, model, engineVolume, mechanicList);
+        this.weightUp = weightUp;
     }
 
     @Override
@@ -38,5 +39,20 @@ public class Autotrack extends Transport implements Competative{
         }else{
             System.out.println(getType());
         }
+    }
+
+    @Override
+    public boolean isDiagPass() throws TransportTimeException {
+        return super.isDiagPass();
+    }
+
+    @Override
+    public String repair() {
+        return "Грузовик отремонтирован,";
+    }
+
+    @Override
+    public String maintance() {
+        return "Грузовик прошел проверку,";
     }
 }
