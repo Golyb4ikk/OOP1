@@ -86,6 +86,18 @@ public class Main {
             System.out.println(map);
         }
 
+        Set<Driver>drSet=new HashSet<>();
+        List<Driver>drivers=new ArrayList<>();
+        drivers.add(man1);
+        drivers.add(man2);
+
+        for(Driver driver:drivers){
+            drSet.add(driver);
+        }
+
+        Iterator<Driver>iterator=drSet.iterator();
+        Driver driver=iterator.next();
+        System.out.println(driver);
     }
 
 }

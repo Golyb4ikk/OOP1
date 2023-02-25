@@ -29,10 +29,19 @@ public class Driver {
         this.experience = experience;
     }
 
+    @Override
+    public String toString() {
+        return  fio+" "+nalichiePrav+" "+experience;
+    }
+
     public Driver(String fio, Boolean nalichiePrav, int experience) {
         this.fio = fio;
         this.nalichiePrav = nalichiePrav;
         this.experience = experience;
+
+
+
+
     }
 
     void stopDriving(){
