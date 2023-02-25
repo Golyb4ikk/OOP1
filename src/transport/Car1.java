@@ -1,12 +1,15 @@
 package transport;
 
+import java.util.List;
+
 public class Car1 extends Transport implements Competative   {
 
     Type type=Type.CAR1;
     Carcase carcase=Carcase.SEDAN;
-    public Car1(String brand, String model, double engineVolume,Carcase carcase) {
-        super(brand, model, engineVolume);
-        this.carcase=carcase;
+
+    public Car1(String brand, String model, double engineVolume, List<Mechanic> mechanicList, Carcase carcase) {
+        super(brand, model, engineVolume, mechanicList);
+        this.carcase = carcase;
     }
 
     public Carcase getCarcase() {
@@ -51,5 +54,20 @@ public class Car1 extends Transport implements Competative   {
         }else{
             System.out.println(getType());
         }
+    }
+
+    @Override
+    public boolean isDiagPass() throws TransportTimeException {
+        return super.isDiagPass();
+    }
+
+    @Override
+    public String repair() {
+        return "Автомобиль отремонтирован";
+    }
+
+    @Override
+    public String maintance() {
+        return "Автомобиль прошел проверку,";
     }
 }
